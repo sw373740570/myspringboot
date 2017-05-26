@@ -1,0 +1,13 @@
+version: "2"
+services:
+    my-springboot-server:
+      restart: always
+      image: springboot
+      volumes:
+         - /var/log/lrh/lrh-core-service:/tmp
+         - /etc/localtime:/etc/localtime
+      ports:
+       - "8040:8070"
+      container_name: springboot
+      environment:
+        SPRING_PROFILES_ACTIVE: dev
